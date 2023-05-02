@@ -13,6 +13,7 @@ public class Hellloword {
 
     public static void main(String[] args) {
         Scanner S = new Scanner(System.in);
+      
        String x1;
        int y;
 //        ArrayList<Integer> a = new ArrayList();
@@ -42,7 +43,7 @@ public class Hellloword {
 //        }
 //         Employee my = new Employee();
          ArrayList<Employee> myList = new ArrayList<>();
-         for(int i = 0 ; i<2; i++)
+         for(int i = 0 ; i<3; i++)
          {
 //             System.out.println("enter name");
 //             x1=S.next();
@@ -54,8 +55,18 @@ public class Hellloword {
 Employee my = new Employee(S.next(),S.nextInt());
              myList.add(my);
          }
+           String maxName= myList.get(0).name;
+        int max=myList.get(0).salary;
          for (Employee employee : myList) {
              System.out.println("name "+employee.name + "\nSalary " + employee.salary);
         }
+         for (Employee employee : myList) {
+             if(employee.salary>=max){
+                 max=employee.salary;
+                 maxName= employee.name;   
+             }
+        }
+         System.out.println(maxName +" "+ max);
+         
     }
 }
